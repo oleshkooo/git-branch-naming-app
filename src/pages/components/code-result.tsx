@@ -10,15 +10,13 @@ type CodeResultProps = Omit<React.ComponentProps<typeof Code>, 'children'> & {
 }
 export const CodeResult: React.FC<CodeResultProps> = memo(({ className, children, ...props }) => {
     const onCopy = useCallback(async () => {
-        if (children == null) {
+        if (!children) {
             return null
         }
         try {
             const prevClipboardText = await navigator.clipboard.readText()
-            console.log('🚀 ~ onCopy ~ prevClipboardText:', prevClipboardText)
             await navigator.clipboard.writeText(children)
 
-            console.log('🚀 ~ onCopy ~ children:', children)
             toast.success('Copied to clipboard!', {
                 description: `Text: ${children}`,
                 action: {

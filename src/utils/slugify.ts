@@ -1,6 +1,8 @@
 export const slugify = (str: string): string => {
     return (
         str
+            // remove square brackets with content
+            .replace(/\[.*?\]/g, '')
             .trim()
             // replace all non-alphanumeric characters with a space
             .replace(/[^a-zA-Z0-9]+/g, ' ')
@@ -12,5 +14,6 @@ export const slugify = (str: string): string => {
             .replace(/ /g, '_')
             // remove leading and trailing underscores
             .replace(/^_+|_+$/g, '')
+            .toLowerCase()
     )
 }
