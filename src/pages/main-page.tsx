@@ -1,6 +1,6 @@
 import { ThemeSelector } from '@/modules/theme/components/theme-selector'
 import { DefaultPagePart } from '@/pages/page-parts/default-page-part'
-import { CustomPagePart } from '@/pages/page-parts/rally-page-part'
+import { CustomPagePart } from '@/pages/page-parts/custom-page-part'
 import { memo } from 'react'
 
 type MainPageProps = unknown
